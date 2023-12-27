@@ -104,13 +104,6 @@ const Navbar = () => {
                         About US{" "}
                       </Link>
                     </li>
-
-                    <li className="header__menu--items">
-                      <Link className="header__menu--link" href="/blog">
-                        Blog
-                      </Link>
-                    </li>
-                   
                   </ul>
                 </nav>
               </div>

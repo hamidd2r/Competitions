@@ -3,6 +3,8 @@ import { postApiData, postWithToken } from '@/Helper/common';
 import Topslider3 from '@/components/TopSlider3';
 import Topslider from '@/components/Topslider'
 import Link from 'next/link';
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
 import React, { useEffect, useState } from 'react'
 
 const Page = () => {
@@ -31,14 +33,14 @@ const Page = () => {
       <Topslider3/>
       {/* <Topslider/> */}
       <section className="my__account--section section--padding">
-          <div className="container col-span-6">
+          <div className="container col-span-8">
             <div className="my__account--section__inner border-radius-10 d-flex">
            
               <div className="account__wrapper">
                 <div className="account__content">
-               <Link href="/add">
+               <Link href="/addpet">
                <button 
-                      className="new__address--btn primary__btn mb-25"
+                      className="new__address--btn  mb-25"
                     >
                       Add New Pet
                     </button>

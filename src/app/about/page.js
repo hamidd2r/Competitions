@@ -3,7 +3,7 @@ import Topslider2 from '@/components/TopSlider2'
 import Topslider from '@/components/Topslider'
 import React, { useEffect, useState } from 'react'
 
-const page = () => {
+const Page = () => {
 
   const [pets, setPets] = useState([]);
 
@@ -102,4 +102,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
