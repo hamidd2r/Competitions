@@ -27,7 +27,7 @@ const Register = () => {
             setRole("");
             setPassword("");
             toast.success("register successfully")
-            router.push("/login")
+            router.push("/")
 
 
             if (typeof window !== 'undefined') {
