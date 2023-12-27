@@ -11,7 +11,7 @@ const ChooseUs = () => {
     <div className="container">
       {/* Section Header */}
       <div className="section-header">
-        <h3>Why Choose Us</h3>
+      
         <p>They will have to make the best of things its an uphill climb</p>
       </div>
       {/* Section Header /- */}
