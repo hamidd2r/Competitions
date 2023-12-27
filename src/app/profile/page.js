@@ -3,8 +3,7 @@ import { postApiData, postWithToken } from '@/Helper/common';
 import Topslider3 from '@/components/TopSlider3';
 import Topslider from '@/components/Topslider'
 import Link from 'next/link';
-import "react-responsive-modal/styles.css";
-import { Modal } from "react-responsive-modal";
+
 import React, { useEffect, useState } from 'react'
 
 const Page = () => {
