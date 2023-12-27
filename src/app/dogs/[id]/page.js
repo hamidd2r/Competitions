@@ -50,7 +50,7 @@ const Page = () => {
             </p> */}
           </div>
           <article>
-            <div className="entry-cover">
+            <div >
               <a href="/">
                 <img style={{height:"300px", width:"100%"}} src={petsDetails.image} alt="blog-1" />
               </a>
@@ -60,7 +60,7 @@ const Page = () => {
             <div className="post-content">
               <div className="post-meta">
                
-                <div className="post-comment">
+                {/* <div className="post-comment">
                   <i>
                     <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
@@ -77,12 +77,12 @@ const Page = () => {
                     <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
                   <a href="#">{petsDetails.pet_id}</a>
-                </div>
+                </div> */}
                
               </div>
               <h3 className="entry-title">
                 <p>
-                  Special care on Your Lovely Pets by Veterinary physician
+                  {petsDetails.pet_name}
                 </p>
               </h3>
               <div className="entry-content">
@@ -112,7 +112,7 @@ const Page = () => {
    
   </div>
   <>
-  <section className="blog__details--section section--padding">
+  {/* <section className="blog__details--section section--padding">
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
@@ -166,7 +166,7 @@ const Page = () => {
       
       </div>
     </div>
-  </section>
+  </section> */}
   {/* End blog details section */}
 </>
 
