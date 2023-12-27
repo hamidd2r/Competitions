@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Topslider = () => {
+const Topslider5 = () => {
   return (
     <div>
      <>
@@ -10,12 +10,12 @@ const Topslider = () => {
     <div className="container">
       {/* Banner Heading */}
       <div className="banner-heading">
-        <h3>Pets details</h3>
+        <h3>Login</h3>
         <ol className="breadcrumb">
           <li>
             <a href="#">Home</a>
           </li>
-          <li className="active">Pets details</li>
+          <li className="active">Login</li>
         </ol>
       </div>
       {/* Banner Heading /- */}
@@ -29,4 +29,4 @@ const Topslider = () => {
   )
 }
 
-export default Topslider
+export default Topslider5

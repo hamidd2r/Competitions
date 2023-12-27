@@ -27,7 +27,7 @@ const Register = () => {
             setRole("");
             setPassword("");
             toast.success("register successfully")
-            router.push("/")
+            router.push("/login")
 
 
             if (typeof window !== 'undefined') {
@@ -92,7 +92,7 @@ const Register = () => {
                 />
               </div>
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label className="col-md-4 col-sm-4 col-xs-12">Your Role</label>
               <div className="col-md-8 col-sm-8 col-xs-12">
                 <input type="text"
@@ -101,7 +101,24 @@ const Register = () => {
                  className="form-control"
                   id="new-user-id" />
               </div>
-            </div>
+            </div> */}
+            <div className="form-group">
+  <label className="col-md-4 col-sm-4 col-xs-12">Your Role</label>
+  <div className="col-md-8 col-sm-8 col-xs-12">
+    <select
+      value={role}
+      onChange={(e) => setRole(e.target.value)}
+      className="form-control"
+      id="new-user-id"
+    >
+      <option value="">Select Your Role</option>
+      <option value="1">adopter</option>
+      <option value="2">resque team</option>
+     
+    </select>
+  </div>
+</div>
+
 
             <div className="col-md-8 pull-right">
               <button type="submit" className="btn-register">

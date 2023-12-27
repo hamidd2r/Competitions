@@ -1,98 +1,96 @@
-import React from 'react'
+"use client"
+import { postApiData } from '@/Helper/common'
+import Topslider from '@/components/Topslider'
+import { useParams } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 
 const page = () => {
+
+
+  const params = useParams()
+  console.log(params)
+
+  const [petsDetails, setPetsDetails] = useState([]);
+
+  // @ products Details API call
+  const petLists = async () => {
+    const pet_id = params.id
+    const apiData = JSON.stringify({pet_id})
+    try {
+      const data = await postApiData("pets-details",apiData);
+      setPetsDetails(data.success);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  console.log(petsDetails.message)
+
+
+  useEffect(() => {
+    petLists();
+  }, []);
+
   return (
     <div>
       <>
+      <Topslider/>
   <div className="container-fluid no-padding blog-list">
     <div className="section-padding" />
     {/* Container */}
     <div className="container">
       <div className="row">
         {/* Blog Area */}
-        <div className="col-md-9 col-sm-9 col-xs-12 blog-area">
+        <div className="col-md-12 col-sm-9 col-xs-12 blog-area">
           <div className="section-title">
-            <h3>Updates from Our Shop</h3>
-            <p>
+            <h3>Pets details</h3>
+            {/* <p>
               In a freak mishap ranger and its pilot captain william buck rogers
               are blown
-            </p>
+            </p> */}
           </div>
           <article>
             <div className="entry-cover">
-              <a href="single-blog.html">
-                <img src="images/blog/blog-1.jpg" alt="blog-1" />
+              <a href="/">
+                <img style={{height:"300px", width:"100%"}} src={petsDetails.image} alt="blog-1" />
               </a>
-              <a href="single-blog.html" className="read-more">
-                Read More
-              </a>
+              
             </div>
             {/* Post Content */}
             <div className="post-content">
               <div className="post-meta">
-                <div className="post-date">
-                  <span>Sep</span>
-                  <span>28</span>
-                </div>
+               
                 <div className="post-comment">
                   <i>
-                    <img src="images/icon/comment.png" alt="Comment" />
+                    <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
-                  <a href="#">17</a>
+                  <a href="#">{petsDetails.pet_id}</a>
                 </div>
                 <div className="post-like">
                   <i>
-                    <img src="images/icon/blog-like.png" alt="Comment" />
+                    <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
-                  <a href="#">13</a>
+                  <a href="#">{petsDetails.pet_id}</a>
                 </div>
-                <div className="post-share pull-right">
-                  <a href="#">
-                    <i className="fa fa-reply" />
-                    Reply
-                  </a>
-                  <a href="#">
-                    <i>
-                      <img src="images/icon/share.png" alt="Comment" />
-                    </i>
-                    Share
-                  </a>
+                <div className="post-comment">
+                  <i>
+                    <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
+                  </i>
+                  <a href="#">{petsDetails.pet_id}</a>
                 </div>
+               
               </div>
               <h3 className="entry-title">
-                <a href="single-blog.html">
+                <p>
                   Special care on Your Lovely Pets by Veterinary physician
-                </a>
+                </p>
               </h3>
               <div className="entry-content">
                 <p>
-                  The weather started getting rough the tiny ship was tossed if
-                  not for the courage of the fearless crew the Minnow would be
-                  lost the minnow lost. Come and knock on our door. Weve been
-                  waiting for you. Where the kisses are hers and hers and
-                  his.Threes company too. Michael Knight a young loner on a
-                  crusade to champion the cause of the innocent is the tale.
+                 {petsDetails.message}
                 </p>
               </div>
-              <div className="entry-footer">
-                <div className="post-admin">
-                  <i>
-                    <img src="images/icon/admin-ic.png" alt="admin-ic" />
-                  </i>
-                  Posted by<a href="#">Admin</a>
-                </div>
-                <div className="tags">
-                  <i>
-                    <img src="images/icon/tags.png" alt="Tags" />
-                  </i>
-                  <a href="#">Pets</a>
-                  <a href="#">Veterinary</a>
-                  <a href="#">Dog</a>
-                  <a href="#">Ear</a>
-                  <a href="#">Cleaning</a>
-                  <a href="#">Doctor</a>
-                </div>
-              </div>
+            
             </div>
             {/* Post Content /- */}
           </article>
@@ -100,7 +98,7 @@ const page = () => {
          
        
          
-          <div className="section-padding" />
+       
           {/* Pagination */}
         
           {/* Pagination /- */}
@@ -111,9 +109,67 @@ const page = () => {
         {/* Widget Area /- */}
       </div>
     </div>
-    {/* Container /- */}
-    <div className="section-padding" />
+   
   </div>
+  <>
+  <section className="blog__details--section section--padding">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6">
+          <div className="blog__details--wrapper">
+            <div className="entry__blog">
+             
+              <div className="blog__thumbnail mb-30">
+                <img
+                  className="blog__thumbnail--img border-radius-10"
+                  src={petsDetails.image}
+                  alt="blog-img"
+                />
+              </div>
+              <div className="blog__details--content">
+                <h3 className="blog__details--content__subtitle mb-25">
+                {petsDetails.message}
+                </h3>
+              
+             
+             
+              </div>
+            </div>
+        
+          
+          </div>
+        </div>
+        <div className="col-lg-6">
+          <div className="blog__details--wrapper">
+            <div className="entry__blog">
+             
+              <div className="blog__thumbnail mb-30">
+                <img
+                  className="blog__thumbnail--img border-radius-10"
+                  src={petsDetails.image}
+                  alt="blog-img"
+                />
+              </div>
+              <div className="blog__details--content">
+                <h3 className="blog__details--content__subtitle mb-25">
+                {petsDetails.message}
+                </h3>
+              
+             
+             
+              </div>
+            </div>
+        
+          
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  {/* End blog details section */}
+</>
+
   {/* Blog List /- */}
 </>
 

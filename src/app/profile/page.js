@@ -1,6 +1,8 @@
 "use client"
 import { postApiData, postWithToken } from '@/Helper/common';
+import Topslider3 from '@/components/TopSlider3';
 import Topslider from '@/components/Topslider'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const Page = () => {
@@ -26,13 +28,21 @@ const Page = () => {
 
   return (
     <div>
+      <Topslider3/>
       {/* <Topslider/> */}
       <section className="my__account--section section--padding">
           <div className="container col-span-6">
             <div className="my__account--section__inner border-radius-10 d-flex">
-             
+           
               <div className="account__wrapper">
                 <div className="account__content">
+               <Link href="/add">
+               <button 
+                      className="new__address--btn primary__btn mb-25"
+                    >
+                      Add New Pet
+                    </button>
+               </Link>
                   <h3 className="account__content--title mb-20">Profile</h3>
 
                   <div className="account__details two">

@@ -1,92 +1,103 @@
+"use client"
+import Topslider2 from '@/components/TopSlider2'
 import Topslider from '@/components/Topslider'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const page = () => {
+
+  const [pets, setPets] = useState([]);
+
+  // @ products Details API call
+  const petLists = async () => {
+    try {
+      const data = await postApiData("latest-list");
+      setPets(data.success);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  useEffect(() => {
+    petLists();
+  }, []);
   return (
     <>
-    <div>
-      {/* <Topslider/> */}
+   <Topslider2/>
 
-   
-  {/* What We Do */}
-  <div className="what-we-do container-fluid no-padding">
-    <div className="section-padding" />
-    {/* Section Header */}
-    <div className="section-header">
-      <h3>What We Do</h3>
-      <p>They will have to make the best of things its an uphill climb</p>
-    </div>
-    {/* Section Header */}
-    {/* Container */}
+  {/* End banner section */}
+  {/* Start banner section */}
+  <section className="banner__section section--padding color-scheme-2 pt-0">
     <div className="container">
-      <div className="col-md-4 col-sm-6">
-        <div className="what-we-do-content">
-          <img src="images/whatwedo/dog.jpg" alt="dog" />
-          <h3>Pet Grooming</h3>
-          <p>
-            The Big Oxmox advised her not to do so, because there were
-            thousands.
-          </p>
-        </div>
-      </div>
-      <div className="col-md-4 col-sm-6">
-        <div className="what-we-do-content">
-          <img src="images/whatwedo/cat.jpg" alt="dog" />
-          <h3>Regular Health Checkup</h3>
-          <p>
-            The Big Oxmox advised her not to do so, because there were
-            thousands.
-          </p>
-        </div>
-      </div>
-      <div className="col-md-4 col-sm-6">
-        <div className="what-we-do-content">
-          <img src="images/whatwedo/nutrition.jpg" alt="nutrition" />
-          <h3>Best Nutrition</h3>
-          <p>
-            The Big Oxmox advised her not to do so, because there were
-            thousands.
-          </p>
-        </div>
-      </div>
-      <div className="col-md-4 col-sm-6">
-        <div className="what-we-do-content">
-          <img src="images/whatwedo/medical.jpg" alt="medical" />
-          <h3>Medical Support</h3>
-          <p>
-            The Big Oxmox advised her not to do so, because there were
-            thousands.
-          </p>
-        </div>
-      </div>
-      <div className="col-md-4 col-sm-6">
-        <div className="what-we-do-content">
-          <img src="images/whatwedo/bucket.jpg" alt="bucket" />
-          <h3>Quality Products Selling</h3>
-          <p>
-            The Big Oxmox advised her not to do so, because there were
-            thousands.
-          </p>
-        </div>
-      </div>
-      <div className="col-md-4 col-sm-6">
-        <div className="what-we-do-content">
-          <img src="images/whatwedo/bag.jpg" alt="bag" />
-          <h3>Anytime Emergency Unit</h3>
-          <p>
-            The Big Oxmox advised her not to do so, because there were
-            thousands.
-          </p>
+      <div className="row">
+        <div className="col">
+          <div className="banner__section--inner d-flex align-items-center">
+            <div className="banner__discount--content">
+             
+              <h2 className="banner__discount--content__title">
+                Top Rescue Pets 
+              </h2>
+              {/* <p className="banner__discount--content__desc">
+                Lorem ipsum dolor sit amet, consecteturiuyr icing elit,sed do
+                eiusmod ut labore et. Lorem ipsum dolor sit amet, consecteturop.
+              </p> */}
+              <a
+                className=" primary__btn btn__style2"
+                href="shop.html"
+                rel="nofollow"
+              >
+                Discover More
+              </a>
+            </div>
+            <div className="banner2__right--sidebar position__relative d-flex">
+              <div className="banner2__sidebar--items one position__relative">
+                <a
+                  className="banner__items--thumbnail "
+                  href="shop.html"
+                  rel="nofollow"
+                >
+                  <img
+                    className="banner__items--thumbnail__img"
+                    src="https://cdn.shopify.com/s/files/1/1708/4041/files/custom_resized_lab_480x480.jpg?v=1668581125"
+                    alt="banner-img"
+                  />
+                </a>
+             
+              </div>
+              <div className="banner2__sidebar--items two position__relative">
+                <a
+                  className="banner__items--thumbnail "
+                  href="shop.html"
+                  rel="nofollow"
+                >
+                  <img
+                    className="banner__items--thumbnail__img"
+                    src="https://cdn.shopify.com/s/files/1/1708/4041/files/custom_resized_lab_480x480.jpg?v=1668581125"
+                    alt="banner-img"
+                  />
+                </a>
+              </div>
+              <div className="banner2__sidebar--items three position__relative">
+                <a
+                  className="banner__items--thumbnail "
+                  href="shop.html"
+                  rel="nofollow"
+                >
+                  <img
+                    className="banner__items--thumbnail__img"
+                    src="https://cdn.shopify.com/s/files/1/1708/4041/files/custom_resized_lab_480x480.jpg?v=1668581125"
+                    alt="banner-img"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    {/* Container /- */}
-    <div className="section-padding" />
-  </div>
-  {/* What We Do /- */}
+  </section>
+  {/* End banner section */}
 
 
-    </div>
     </>
   )
 }
