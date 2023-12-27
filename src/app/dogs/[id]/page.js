@@ -78,7 +78,7 @@ const Page = () => {
                     <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
                   <a href="#">{petsDetails.pet_id}</a>
-                </div>
+                </div> */}
                
                
               </div>
@@ -86,7 +86,7 @@ const Page = () => {
              <div>
              <h3 className="entry-title">
                 <p>
-                  Special care on Your Lovely Pets by Veterinary physician
+                {petsDetails.message}
                 </p>
               </h3>
               <Button style={{color:"white",marginLeft:"200px"}} className=' bg-black'>Adopt {petsDetails.pet_name}</Button>
@@ -114,61 +114,7 @@ const Page = () => {
    
   </div>
   <>
-  {/* <section className="blog__details--section section--padding">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-6">
-          <div className="blog__details--wrapper">
-            <div className="entry__blog">
-             
-              <div className="blog__thumbnail mb-30">
-                <img
-                  className="blog__thumbnail--img border-radius-10"
-                  src={petsDetails.image}
-                  alt="blog-img"
-                />
-              </div>
-              <div className="blog__details--content">
-                <h3 className="blog__details--content__subtitle mb-25">
-                {petsDetails.message}
-                </h3>
-              
-             
-             
-              </div>
-            </div>
-        
-          
-          </div>
-        </div>
-        <div className="col-lg-6">
-          <div className="blog__details--wrapper">
-            <div className="entry__blog">
-             
-              <div className="blog__thumbnail mb-30">
-                <img
-                  className="blog__thumbnail--img border-radius-10"
-                  src={petsDetails.image}
-                  alt="blog-img"
-                />
-              </div>
-              <div className="blog__details--content">
-                <h3 className="blog__details--content__subtitle mb-25">
-                {petsDetails.message}
-                </h3>
-              
-             
-             
-              </div>
-            </div>
-        
-          
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  </section> */}
+ 
   {/* End blog details section */}
 </>
 
