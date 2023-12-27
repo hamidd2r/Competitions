@@ -40,7 +40,7 @@ console.log(pets)
         {pets && pets.length > 0 ? (
     pets.map((item, index) => (
        
-        <div className="col-md-4 col-sm-6 col-xs-12">
+        <div key={index} className="col-md-4 col-sm-6 col-xs-12">
           <div className="product-box">
             <div className="product-image">
               <img src={item.image} alt="Shop" />
