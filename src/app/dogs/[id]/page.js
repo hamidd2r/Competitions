@@ -1,6 +1,7 @@
 "use client"
 import { postApiData } from '@/Helper/common'
 import Topslider from '@/components/Topslider'
+import { Button } from 'antd'
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
@@ -64,32 +65,33 @@ const Page = () => {
                   <i>
                     <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
-                  <a href="#">{petsDetails.pet_id}</a>
+                  <a href="#">{petsDetails.pet_name}</a>
                 </div>
                 <div className="post-like">
                   <i>
                     <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
-                  <a href="#">{petsDetails.pet_id}</a>
+                  <a href="#">{petsDetails.pet_name}</a>
                 </div>
                 <div className="post-comment">
                   <i>
                     <img style={{height:"100px"}} src={petsDetails.image} alt="Comment" />
                   </i>
-                  <a href="#">{petsDetails.pet_id}</a>
+                  <a href="#">{petsDetails.pet_name}</a>
                 </div>
                
+               
               </div>
-              <h3 className="entry-title">
+              
+             <div>
+             <h3 className="entry-title">
                 <p>
-                  Special care on Your Lovely Pets by Veterinary physician
+                {petsDetails.message}
                 </p>
               </h3>
-              <div className="entry-content">
-                <p>
-                 {petsDetails.message}
-                </p>
-              </div>
+              <Button style={{color:"white",marginLeft:"200px"}} className=' bg-black'>Adopt {petsDetails.pet_name}</Button>
+             </div>
+             
             
             </div>
             {/* Post Content /- */}

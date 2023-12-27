@@ -415,7 +415,7 @@ ul {
 	}
 	.logo-block a {
 		display: inline-block;
-		text-decoration: none;
+		/* text-decoration: none; */
 	}
 	.navbar-brand.logo-block {	
 		display: none;

@@ -48,6 +48,8 @@ const Navbar = () => {
                   Contact
                 </Link>
               </li>
+
+
             </ul>
           </nav>
         </div>
@@ -104,13 +106,19 @@ const Navbar = () => {
                         About US{" "}
                       </Link>
                     </li>
+                    <li className="header__menu--items">
+                      <a className="header__menu--link" href="/allpets">
+                        All Pets{" "}
+                      </a>
+                    </li>
+                    
                   </ul>
                 </nav>
               </div>
               <div className="header__account">
                 <ul className="d-flex">
                   {token ? (
-   <li className="header__account--items">
+   <li style={{paddingRight:"30px"}}  className="header__account--items">
    <Link className="header__account--btn" href="/profile">
      <svg
        xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +146,7 @@ const Navbar = () => {
    </Link>
  </li>
                   ):(
-                    <li className="header__account--items">
+                    <li style={{paddingRight:"30px"}} className="header__account--items">
                     <Link className="header__account--btn" href="/login">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

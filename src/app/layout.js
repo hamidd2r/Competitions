@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         </Head>
         <Navbar/>
         {children}
-        {/* <Footer/> */}
+        <Footer/>
         <ToastContainer />
         <BootstapCom/>
         </body>

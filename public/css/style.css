@@ -3338,7 +3338,7 @@ body.overlay__active::before {
     background: 0 0;
     font-size: 1.2rem;
     text-transform: uppercase;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     font-weight: 700;
     opacity: .7
 }
@@ -3482,12 +3482,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .minicart__conditions--link {
     color: var(--secondary-color);
-    text-decoration: underline
+    /* text-decoration: underline */
 }
 
 .minicart__conditions--link:hover {
     color: var(--primary-color);
-    text-decoration: underline
+    /* text-decoration: underline */
 }
 
 .minicart__button--link {
@@ -9741,7 +9741,7 @@ input.quickview__value--number {
 
 .blog__post--meta__link:hover {
     color: var(--secondary-color);
-    text-decoration: underline
+    /* text-decoration: underline */
 }
 
 .blog__thumbnail {
